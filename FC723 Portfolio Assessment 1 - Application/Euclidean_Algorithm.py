@@ -1,4 +1,5 @@
 
+# Create a class called EuclideanAlgorithm
 class EuclideanAlgorithm:
 
     def __init__(self):
@@ -31,9 +32,15 @@ class EuclideanAlgorithm:
         """
         Function to check relative prime numbers
         """
-        # Get the two numbers that user want to check if they are relative prime
-        A = int(input("Please enter first number: "))
-        B = int(input("Please enter second number: "))
+        # Try to convert the input strings to integers
+        try:
+            A = int(input("Please enter first number: "))
+            B = int(input("Please enter second number: "))
+        # If they cannot be converted, system will prompt users to rewrite
+        except ValueError:
+            print("Error: Invalid input. Please enter positive integer only.")
+            return
+
 
         # Get and show GCD
         GCD = self.find_gcd(A, B)
